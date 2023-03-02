@@ -15,10 +15,9 @@ console.log(guesses[0])
 // bij enter guess leegmaken naar volgende regel
 
 const handleSubmit = (e) => {
-  e.preventDefault()
+  e.preventDefault();
   // console.log(`guess1 length: ${guesses[0].length}`)
 // if guess1 is filled with 5, set true
-
 
 setGuesses([...guesses, guess])
 
@@ -30,11 +29,15 @@ setGuess()
   // if theres no content, stay white. if there is, check if its equal to 
 
   // map guesses on top, remove bottom guess
+
+  if (guesses.length = 1) {
+  // remove 
+  console.log('hiii')
+
+}
 }
 
-// if (guesses.length = 1) {
-//   // remove 
-// }
+
 
   return (
     <div className="App">
@@ -55,9 +58,9 @@ setGuess()
         <p className="character">{guess?.charAt(3)}</p>
         <p className="character">{guess?.charAt(4)}</p>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
       <input type="text" id="textbar" minLength="5" maxLength="5" required onChange={e => setGuess(e.target.value)} />
-      <button type="submit" onClick={e => handleSubmit(e)}>Submit</button>
+      <button type="submit">Submit</button>
       </form>
     </div>
   );
