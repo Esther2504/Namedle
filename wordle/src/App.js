@@ -32,15 +32,15 @@ setGuess()
   // map guesses on top, remove bottom guess
 }
 
-if (guesses.length = 1) {
-  // remove 
-}
+// if (guesses.length = 1) {
+//   // remove 
+// }
 
   return (
     <div className="App">
 {guesses.map(guess =>
   <div className="guess">
-  <p className="character" style={{backgroundColor:`${guess}`}}>{guess?.charAt(0)}</p>
+  <p className="character">{guess?.charAt(0)}</p>
   <p className="character">{guess?.charAt(1)}</p>
   <p className="character">{guess?.charAt(2)}</p>
   <p className="character">{guess?.charAt(3)}</p>
