@@ -6,7 +6,7 @@ function App() {
   const [guess, setGuess] = useState();
   const [answer, setAnswer] = useState("kinds");
   const [color, setColor] = useState("");
-  const [guessesLeft, setguessesLeft] = useState()
+  const [guessesLeft, setguessesLeft] = useState(6)
 
   console.log(`answer: ${answer}`);
   console.log(`guess1: ${guess}`);
@@ -19,6 +19,10 @@ function App() {
     e.preventDefault();
     // console.log(`guess1 length: ${guesses[0].length}`)
     // if guess1 is filled with 5, set true
+
+    if (guessesLeft > 1) {
+      
+   
 
     setGuesses([...guesses, guess]);
 
@@ -35,16 +39,20 @@ function App() {
 
     setGuess();
 
+    setguessesLeft(guessesLeft - 1)
+
+ 
+
     // if guess equals answer, become green
     // if theres no content, stay white. if there is, check if its equal to
 
     // map guesses on top, remove bottom guess
 
-    if ((guesses.length = 1)) {
-      // remove
-      console.log("hiii");
-    }
+
+
+  }
   };
+
 
   return (
     <div className="App">
@@ -57,7 +65,6 @@ function App() {
           <p className="character">{guess?.charAt(4)}</p>
         </div>
       ))}
-
       <div className="guess">
         <p className="character">{guess?.charAt(0)}</p>
         <p className="character">{guess?.charAt(1)}</p>
@@ -65,6 +72,63 @@ function App() {
         <p className="character">{guess?.charAt(3)}</p>
         <p className="character">{guess?.charAt(4)}</p>
       </div>
+{guessesLeft > 5 ?
+      <div className="guess">
+      <p className="character"></p>
+      <p className="character"></p>
+      <p className="character"></p>
+      <p className="character"></p>
+      <p className="character"></p>
+    </div>
+: 
+null}
+{guessesLeft > 4 ?
+<div className="guess">
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+</div>
+: 
+null
+}
+{guessesLeft > 3 ?
+<div className="guess">
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+</div>
+: 
+null
+}
+{guessesLeft > 2 ?
+<div className="guess">
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+</div>
+: 
+null
+}
+{guessesLeft > 1 ?
+<div className="guess">
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+<p className="character"></p>
+</div>
+: 
+null
+}
+
+  
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
