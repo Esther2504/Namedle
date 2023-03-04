@@ -22,7 +22,7 @@ function App() {
     // console.log(`guess1 length: ${guesses[0].length}`)
     // if guess1 is filled with 5, set true
 
-    if (guessesLeft > 1) {
+    if (guessesLeft > 0) {
    
       console.log(guess.charAt(0))
       console.log(answer.charAt(0))
@@ -44,34 +44,14 @@ for (let i = 0; i < 5; i++) {
     colors.push('yellow')
   } else {
     console.log('test3')
-    colors.push('red')
+    colors.push('#B2B2B2')
   }
-
 }
-
-
-      console.log(colors)
-
-      // daarna alles aan setguesses toevoegen
-
-    // setGuesses([...guesses, guess]);
 
     setGuesses([...guesses, {
       guess: {guess},
       colors: {colors}
     }]);
-
-    console.log(guesses)
-    // kleuren leegmaken
-
-    // Naast guess ook een kleur meegeven 
-    // {
-    //   guess: guess,
-    //   colors:
-    // }
-
-    // if guess[0] is answer[0] = groen
-    // if answer includes guess[0] = orange
 
     document.getElementById("textbar").value = "";
 
@@ -98,13 +78,14 @@ for (let i = 0; i < 5; i++) {
       <div className="container">
       {guesses.map((guess) => (
         <div className="guess">
-          <p className="character" style={{backgroundColor:`${guess.colors.colors[0]}`}}>{guess.guess.guess.charAt(0)}</p>
-          <p className="character" style={{backgroundColor:`${guess.colors.colors[1]}`}}>{guess.guess.guess.charAt(1)}</p>
-          <p className="character" style={{backgroundColor:`${guess.colors.colors[2]}`}}>{guess.guess.guess.charAt(2)}</p>
-          <p className="character" style={{backgroundColor:`${guess.colors.colors[3]}`}}>{guess.guess.guess.charAt(3)}</p>
-          <p className="character" style={{backgroundColor:`${guess.colors.colors[4]}`}}>{guess.guess.guess.charAt(4)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[0]}`,color:'white',borderColor:`${guess.colors.colors[0]}`}}>{guess.guess.guess.charAt(0)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[1]}`,color:'white',borderColor:`${guess.colors.colors[1]}`}}>{guess.guess.guess.charAt(1)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[2]}`,color:'white',borderColor:`${guess.colors.colors[2]}`}}>{guess.guess.guess.charAt(2)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[3]}`,color:'white',borderColor:`${guess.colors.colors[3]}`}}>{guess.guess.guess.charAt(3)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[4]}`,color:'white',borderColor:`${guess.colors.colors[4]}`}}>{guess.guess.guess.charAt(4)}</p>
         </div>
       ))}
+      {guessesLeft > 0 ?
       <div className="guess">
         <p className="character">{guess?.charAt(0)}</p>
         <p className="character">{guess?.charAt(1)}</p>
@@ -112,6 +93,8 @@ for (let i = 0; i < 5; i++) {
         <p className="character">{guess?.charAt(3)}</p>
         <p className="character">{guess?.charAt(4)}</p>
       </div>
+      : null
+}
 {guessesLeft > 5 ?
       <div className="guess">
       <p className="character"></p>
