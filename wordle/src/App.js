@@ -5,13 +5,15 @@ function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
   const [answer, setAnswer] = useState("kinds");
-  const [color, setColor] = useState("");
+  // const [colors, setColors] = useState([]);
   const [guessesLeft, setguessesLeft] = useState(6)
 
   console.log(`answer: ${answer}`);
-  console.log(`guess1: ${guess}`);
+  console.log(`guess: ${guess}`);
 
   console.log(guesses[0]);
+
+  // console.log(colors)
 
   // bij enter guess leegmaken naar volgende regel
 
@@ -21,15 +23,67 @@ function App() {
     // if guess1 is filled with 5, set true
 
     if (guessesLeft > 1) {
-      
    
+      console.log(guess.charAt(0))
+      console.log(answer.charAt(0))
+      // aan array toevoegen
+
+      console.log(Array.from(guess))
+      setGuess(Array.from(guess))
+      console.log(guess)
+
+let colors = []
+
+for (let i = 0; i < 5; i++) {
+  if (guess.charAt(i) == answer.charAt(i)) {
+    console.log('test')
+    colors.push('green')
+    console.log(colors)
+  } else if (answer.includes(guess.charAt(i))) {
+    console.log('test2')
+    colors.push('yellow')
+  } else {
+    console.log('test3')
+    colors.push('red')
+  }
+
+}
+      // if (guess.charAt(0) == answer.charAt(0)) {
+      //   console.log('test')
+      //   colors.push('green')
+      //   console.log(colors)
+      // } else if (answer.includes(guess.charAt(0))) {
+      //   console.log('test2')
+      //   colors.push('yellow')
+      // } else {
+      //   console.log('test3')
+      //   colors.push('red')
+      // }
+
+      // if (guess.charAt(1) == answer.charAt(1)) {
+      //   console.log('tester')
+      //   colors.push('green')
+      //   console.log(colors)
+      // } else if (answer.includes(guess.charAt(1))) {
+      //   console.log('tester2')
+      //   colors.push('yellow')
+      // } else {
+      //   console.log('tester3')
+      //   colors.push('red')
+      // }
+
+      console.log(colors)
+
+      // daarna alles aan setguesses toevoegen
 
     setGuesses([...guesses, guess]);
 
+    // kleuren leegmaken
+
     // Naast guess ook een kleur meegeven 
     // {
-    //   guess:
-    //   kleuren:
+    //   guess: guess,
+    //   colors:
     // }
 
     // if guess[0] is answer[0] = groen
@@ -56,6 +110,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container">
       {guesses.map((guess) => (
         <div className="guess">
           <p className="character">{guess?.charAt(0)}</p>
@@ -128,7 +183,6 @@ null
 }
 
   
-
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -140,6 +194,7 @@ null
         />
         <button type="submit">Enter</button>
       </form>
+      </div>
     </div>
   );
 }

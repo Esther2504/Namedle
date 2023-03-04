@@ -12,3 +12,26 @@ text-transform: capitalize;
     margin: 3px;
     /* background-color: rgb(55, 231, 78); */
 }
+
+.container {
+    margin: 100px auto;
+    width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+     background-color: #00ABB3;   
+     color: white;
+     border: none;
+     height: 40px;
+}
+
+input {
+    height: 30px;
+}
+
+/* https://colorhunt.co/palette/00abb33c4048b2b2b2eaeaea */
