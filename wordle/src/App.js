@@ -11,13 +11,9 @@ function App() {
     e.preventDefault();
 
     if (guessesLeft > 0) {
-   
-      console.log(guess.charAt(0))
-      console.log(answer.charAt(0))
 
       console.log(Array.from(guess))
       setGuess(Array.from(guess))
-      console.log(guess)
 
 let colors = []
 
@@ -50,7 +46,14 @@ alert('you won!')
 
     setguessesLeft(guessesLeft - 1)
 
-  }
+    console.log(guessesLeft)
+    console.log(guessesLeft == 0)
+    if (guessesLeft == 1) {
+      console.log('test')
+      alert('Sorry, you lost')
+    }
+
+  } 
 
   }
 
