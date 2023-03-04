@@ -91,17 +91,18 @@ for (let i = 0; i < 5; i++) {
   }
   };
 
+  console.log(guesses)
 
   return (
     <div className="App">
       <div className="container">
       {guesses.map((guess) => (
         <div className="guess">
-          <p className="character">{guess?.charAt(0)}</p>
-          <p className="character">{guess?.charAt(1)}</p>
-          <p className="character">{guess?.charAt(2)}</p>
-          <p className="character">{guess?.charAt(3)}</p>
-          <p className="character">{guess?.charAt(4)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[0]}`}}>{guess.guess.guess.charAt(0)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[1]}`}}>{guess.guess.guess.charAt(1)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[2]}`}}>{guess.guess.guess.charAt(2)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[3]}`}}>{guess.guess.guess.charAt(3)}</p>
+          <p className="character" style={{backgroundColor:`${guess.colors.colors[4]}`}}>{guess.guess.guess.charAt(4)}</p>
         </div>
       ))}
       <div className="guess">
