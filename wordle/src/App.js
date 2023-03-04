@@ -48,36 +48,20 @@ for (let i = 0; i < 5; i++) {
   }
 
 }
-      // if (guess.charAt(0) == answer.charAt(0)) {
-      //   console.log('test')
-      //   colors.push('green')
-      //   console.log(colors)
-      // } else if (answer.includes(guess.charAt(0))) {
-      //   console.log('test2')
-      //   colors.push('yellow')
-      // } else {
-      //   console.log('test3')
-      //   colors.push('red')
-      // }
 
-      // if (guess.charAt(1) == answer.charAt(1)) {
-      //   console.log('tester')
-      //   colors.push('green')
-      //   console.log(colors)
-      // } else if (answer.includes(guess.charAt(1))) {
-      //   console.log('tester2')
-      //   colors.push('yellow')
-      // } else {
-      //   console.log('tester3')
-      //   colors.push('red')
-      // }
 
       console.log(colors)
 
       // daarna alles aan setguesses toevoegen
 
-    setGuesses([...guesses, guess]);
+    // setGuesses([...guesses, guess]);
 
+    setGuesses([...guesses, {
+      guess: {guess},
+      colors: {colors}
+    }]);
+
+    console.log(guesses)
     // kleuren leegmaken
 
     // Naast guess ook een kleur meegeven 
