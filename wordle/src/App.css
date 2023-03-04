@@ -1,3 +1,8 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
 .guess {
 display: flex;
 font-size: 3rem;
@@ -23,7 +28,7 @@ form {
 }
 
 button {
-     background-color: #00ABB3;   
+     background-color: #BADEEE;   
      color: white;
      border: none;
      height: 40px;
