@@ -20,8 +20,8 @@ console.log(answer)
 
       let colors = [];
 
-      for (let i = 0; i < 5; i++) {
-        if (guess.charAt(i) == answer.charAt(i)) {
+      for (let i = 1; i < 6; i++) {
+        if (guess.charAt(i) === answer.charAt(i)) {
           colors.push("#9DCD8C");
         } else if (answer.includes(guess.charAt(i))) {
           colors.push("#FEE4A7");
@@ -29,6 +29,7 @@ console.log(answer)
           colors.push("#FED2BF");
         }
       }
+      console.log(colors)
 
       setGuesses([
         ...guesses,
@@ -38,6 +39,8 @@ console.log(answer)
         },
       ]);
 
+      console.log(guesses)
+      // console.log(guesses.colors[0])
       document.getElementById("textbar").value = "";
 
       if (guess == answer) {
@@ -51,7 +54,7 @@ console.log(answer)
       console.log(guessesLeft);
       console.log(guessesLeft == 0);
       if (guessesLeft == 1) {
-        alert("Sorry, you lost");
+        alert(`Sorry, you lost, the answer was ${answer}`);
       }
     }
   };
