@@ -5,22 +5,24 @@ import words from "./words.json"
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 10)]);
+  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 10)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
 
 console.log(Math.random() * 10)
 console.log(answer)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (guessesLeft > 0) {
       console.log(Array.from(guess));
-      setGuess(Array.from(guess));
+      setGuess(Array.from(guess.toLowerCase));
+      // setAnswer(answer.toLowerCase())
 
       let colors = [];
 
-      for (let i = 1; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         if (guess.charAt(i) === answer.charAt(i)) {
           colors.push("#9DCD8C");
         } else if (answer.includes(guess.charAt(i))) {
