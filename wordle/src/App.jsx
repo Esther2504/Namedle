@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import words from "./words.json"
-import questionmark from "./questionmark.svg"
+import question from "./questionmark.svg"
 
 function App() {
   const [guesses, setGuesses] = useState([]);
@@ -18,7 +18,6 @@ console.log(answer)
     if (guessesLeft > 0) {
       console.log(Array.from(guess));
       setGuess(Array.from(guess.toLowerCase));
-      // setAnswer(answer.toLowerCase())
 
       let colors = [];
 
@@ -41,8 +40,6 @@ console.log(answer)
         },
       ]);
 
-      console.log(guesses)
-      // console.log(guesses.colors[0])
       document.getElementById("textbar").value = "";
 
       if (guess == answer) {
@@ -68,6 +65,8 @@ console.log(answer)
         <h1>Namedle</h1>
         </div>
       <div className="container">
+        <div className="guess-container">
+    
         {guesses.map((guess) => (
           <div className="guess">
             <p
@@ -176,7 +175,7 @@ console.log(answer)
             <p className="character"></p>
           </div>
         ) : null}
-
+</div>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
