@@ -15,6 +15,17 @@ body {
     color: white;
     text-align: center;
     font-size: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img {
+    width: 60px;
+}
+
+.moon {
+    width: 40px;
+    margin: 5px;
 }
 
 .guess {
@@ -62,6 +73,7 @@ button {
 
 input {
     height: 30px;
+    border-radius: 10px;
 }
 
 /* https://colorhunt.co/palette/00abb33c4048b2b2b2eaeaea */

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import words from "./words.json"
-import question from "./questionmark.svg"
+import questionmark from "./questionmark.svg"
+import moon from "./moon.svg"
 
 function App() {
   const [guesses, setGuesses] = useState([]);
@@ -11,6 +12,14 @@ function App() {
 
 console.log(answer)
 
+var rand = 0
+var handle = setInterval(function () {
+    rand = Math.floor(Math.random() * 400);
+    console.log(rand)
+}, 1000 * 60 * 60 * 24);
+
+
+// Remove letters after going through loop
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,8 +70,9 @@ console.log(answer)
   return (
     <div className="App">
       <div className="top-bar">
-        <img src="questionmark"></img>
+        <img src={questionmark} />
         <h1>Namedle</h1>
+        <img className="moon" src={moon} />
         </div>
       <div className="container">
         <div className="guess-container">
