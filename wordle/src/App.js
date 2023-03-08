@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import words from "./words.json"
+import questionmark from "./questionmark.svg"
 
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 10)].toLowerCase());
+  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 400)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
 
-console.log(Math.random() * 10)
 console.log(answer)
 
 
@@ -63,6 +63,10 @@ console.log(answer)
 
   return (
     <div className="App">
+      <div className="top-bar">
+        <img src="questionmark"></img>
+        <h1>Namedle</h1>
+        </div>
       <div className="container">
         {guesses.map((guess) => (
           <div className="guess">
@@ -185,6 +189,7 @@ console.log(answer)
           <button type="submit">Enter</button>
         </form>
       </div>
+      <div className="bottom-bar"></div>
     </div>
   );
 }
