@@ -7,19 +7,17 @@ import moon from "./moon.svg"
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 400)].toLowerCase());
+  const [answer, setAnswer] = useState('niels');
   const [guessesLeft, setguessesLeft] = useState(6);
 
 console.log(answer)
 
-var rand = 0
-var handle = setInterval(function () {
-    rand = Math.floor(Math.random() * 400);
-    console.log(rand)
+setInterval(function () {
+    setAnswer(words[Math.floor(Math.random() * 400)].toLowerCase())
 }, 1000 * 60 * 60 * 24);
 
 
-// Remove letters after going through loop
+// Remove letters after going through loop? charat 0?
 
   const handleSubmit = (e) => {
     e.preventDefault();
