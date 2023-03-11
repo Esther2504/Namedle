@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+p {
+    cursor: pointer;
+}
+
 .top-bar, .bottom-bar {
     width: 100%;
     height: 60px;

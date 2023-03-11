@@ -8,7 +8,7 @@ import ResultModal from "./ResultModal";
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState('niels');
+  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 400)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
   const [win, setWin] = useState(false)
   const [openModal, setOpenModal] = useState(false)
@@ -17,6 +17,8 @@ console.log(answer)
 
 setInterval(function () {
     setAnswer(words[Math.floor(Math.random() * 400)].toLowerCase())
+    setWin(false)
+    localStorage.setItem("result", '');
 }, 1000 * 60 * 60 * 24);
 
 
@@ -40,7 +42,6 @@ setInterval(function () {
           colors.push("#FED2BF");
         }
       }
-      console.log(colors)
 
       setGuesses([
         ...guesses,
@@ -53,28 +54,30 @@ setInterval(function () {
       document.getElementById("textbar").value = "";
 
       if (guess == answer) {
-        alert("you won!");
-        setWin(true)
+        setWin('won')
         setOpenModal(true)
+        localStorage.setItem("result", 'won');
       }
 
       setGuess();
 
       setguessesLeft(guessesLeft - 1);
 
-      console.log(guessesLeft);
-      console.log(guessesLeft == 0);
       if (guessesLeft == 1) {
-        alert(`Sorry, you lost, the answer was ${answer}`);
+        setWin('lost')
         setOpenModal(true)
+        localStorage.setItem("result", 'lost');
       }
     }
   };
 
+  let result = localStorage.getItem("result");
+
+
   return (
     <div className="App">
       {openModal ?
-      <ResultModal win={win} answer={answer} setOpenModal={setOpenModal} />
+      <ResultModal win={win} answer={answer} setOpenModal={setOpenModal} result={result} />
       :
       null
     }

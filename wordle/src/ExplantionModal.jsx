@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function ExplantionModal() {
   return (
-    <div>ExplantionModal</div>
+    <div>ExplantionModal
+
+      geinspireerd bij wordle
+    </div>
   )
 }
