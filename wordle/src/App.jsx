@@ -3,12 +3,15 @@ import "./App.css";
 import words from "./words.json"
 import questionmark from "./questionmark.svg"
 import moon from "./moon.svg"
+import ResultModal from "./ResultModal";
 
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
   const [answer, setAnswer] = useState('niels');
   const [guessesLeft, setguessesLeft] = useState(6);
+  const [win, setWin] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
 
 console.log(answer)
 
@@ -51,6 +54,8 @@ setInterval(function () {
 
       if (guess == answer) {
         alert("you won!");
+        setWin(true)
+        setOpenModal(true)
       }
 
       setGuess();
@@ -61,17 +66,25 @@ setInterval(function () {
       console.log(guessesLeft == 0);
       if (guessesLeft == 1) {
         alert(`Sorry, you lost, the answer was ${answer}`);
+        setOpenModal(true)
       }
     }
   };
 
   return (
     <div className="App">
+      {openModal ?
+      <ResultModal win={win} answer={answer} setOpenModal={setOpenModal} />
+      :
+      null
+    }
+      
       <div className="top-bar">
         <img src={questionmark} />
         <h1>Namedle</h1>
         <img className="moon" src={moon} />
         </div>
+        
       <div className="container">
         <div className="guess-container">
     
@@ -184,6 +197,21 @@ setInterval(function () {
           </div>
         ) : null}
 </div>
+        {win ? (
+           <form onSubmit={handleSubmit}>
+           <input
+             type="text"
+             id="textbar"
+             minLength="5"
+             maxLength="5"
+             disabled="disabled"
+             required
+             onChange={(e) => setGuess(e.target.value)}
+           />
+           <button type="submit">Enter</button>
+         </form>
+        )
+      : (
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -195,6 +223,8 @@ setInterval(function () {
           />
           <button type="submit">Enter</button>
         </form>
+      )
+        }
       </div>
       <div className="bottom-bar"></div>
     </div>
