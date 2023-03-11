@@ -21,6 +21,7 @@ setInterval(function () {
     localStorage.setItem("result", '');
 }, 1000 * 60 * 60 * 24);
 
+// local storage array with wins?
 
 // Remove letters after going through loop? charat 0?
 
@@ -201,17 +202,13 @@ setInterval(function () {
         ) : null}
 </div>
         {win ? (
-           <form onSubmit={handleSubmit}>
+           <form onSubmit={e => window.location.reload()}>
            <input
              type="text"
              id="textbar"
-             minLength="5"
-             maxLength="5"
              disabled="disabled"
-             required
-             onChange={(e) => setGuess(e.target.value)}
            />
-           <button type="submit">Enter</button>
+           <button type="submit">New game</button>
          </form>
         )
       : (
