@@ -17,7 +17,6 @@ export default function ResultModal({ answer, win, setOpenModal }) {
         <button className="new-game" onClick={e => window.location.reload()}>New game</button>
         </div>
       </div>
-     
     </div>
   );
 }
