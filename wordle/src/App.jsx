@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import words from "./words.json"
+import names from "./names.json"
 import questionmark from "./questionmark.svg"
 import moon from "./moon.svg"
 import ResultModal from "./ResultModal";
@@ -8,7 +9,7 @@ import ResultModal from "./ResultModal";
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(words[Math.floor(Math.random() * 400)].toLowerCase());
+  const [answer, setAnswer] = useState(names[Math.floor(Math.random() * 400)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
   const [win, setWin] = useState(false)
   const [openModal, setOpenModal] = useState(false)
