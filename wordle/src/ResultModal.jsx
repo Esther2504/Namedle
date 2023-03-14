@@ -4,16 +4,20 @@ export default function ResultModal({ answer, win, setOpenModal }) {
   return (
     <div className="wrapper">
       <div className="result-container">
-        <p onClick={(e) => setOpenModal(false)}>X</p>
+        <p className="cross" onClick={(e) => setOpenModal(false)}>X</p>
+        <div className="content">
+          <div>
         {win == "won" ? (
-          <p>Gefeliciteerd, het antwoord was</p>
+          <p>Congratulations, the answer was</p>
         ) : (
-          <p>Het antwoord was</p>
+          <p>The answer was</p>
         )}
         <p className="answer">{answer}</p>
-        <p> nieuwe Namedle</p>
-        <button onClick={e => window.location.reload()}>New game</button>
+        </div>
+        <button className="new-game" onClick={e => window.location.reload()}>New game</button>
+        </div>
       </div>
+     
     </div>
   );
 }
