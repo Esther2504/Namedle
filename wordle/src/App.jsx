@@ -10,7 +10,7 @@ import ExplantionModal from "./ExplantionModal";
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(names[Math.floor(Math.random() * 400)].toLowerCase());
+  const [answer, setAnswer] = useState(names[Math.floor(Math.random() * 1400)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
   const [win, setWin] = useState(false)
   const [openModal, setOpenModal] = useState(false)
