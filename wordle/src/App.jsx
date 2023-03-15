@@ -5,6 +5,7 @@ import names from "./names.json"
 import questionmark from "./questionmark.svg"
 import moon from "./moon.svg"
 import ResultModal from "./ResultModal";
+import ExplantionModal from "./ExplantionModal";
 
 function App() {
   const [guesses, setGuesses] = useState([]);
@@ -57,7 +58,7 @@ setInterval(function () {
 
       if (guess == answer) {
         setWin('won')
-        setOpenModal(true)
+        setOpenModal('result')
         localStorage.setItem("result", 'won');
       }
 
@@ -67,7 +68,7 @@ setInterval(function () {
 
       if (guessesLeft == 1) {
         setWin('lost')
-        setOpenModal(true)
+        setOpenModal('result')
         localStorage.setItem("result", 'lost');
       }
     }
@@ -78,14 +79,16 @@ setInterval(function () {
 
   return (
     <div className="App">
-      {openModal ?
+      {openModal == 'result' ?
       <ResultModal win={win} answer={answer} setOpenModal={setOpenModal} result={result} />
+      : openModal == 'explanation' ?
+      <ExplantionModal win={win} answer={answer} setOpenModal={setOpenModal} result={result} />
       :
       null
     }
       
       <div className="top-bar">
-        <img src={questionmark} />
+        <img onClick={e => setOpenModal('explanation')} src={questionmark} />
         <h1>Namedle</h1>
         <img className="moon" src={moon} />
         </div>
