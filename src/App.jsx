@@ -4,21 +4,23 @@ import words from "./words.json"
 import names from "./names2.json"
 import questionmark from "./questionmark.svg"
 import moon from "./moon.svg"
+import sun from "./sun.svg"
 import ResultModal from "./ResultModal";
 import ExplantionModal from "./ExplantionModal";
 
 function App() {
   const [guesses, setGuesses] = useState([]);
   const [guess, setGuess] = useState();
-  const [answer, setAnswer] = useState(names[Math.floor(Math.random() * 1400)].toLowerCase());
+  const [answer, setAnswer] = useState(names[Math.floor(Math.random() * 500)].toLowerCase());
   const [guessesLeft, setguessesLeft] = useState(6);
   const [win, setWin] = useState(false)
   const [openModal, setOpenModal] = useState(false)
+  const [dark, setDark] = useState()
 
 console.log(answer)
 
 setInterval(function () {
-    setAnswer(words[Math.floor(Math.random() * 400)].toLowerCase())
+    setAnswer(words[Math.floor(Math.random() * 300)].toLowerCase())
     setWin(false)
     localStorage.setItem("result", '');
 }, 1000 * 60 * 60 * 24);
@@ -36,15 +38,28 @@ setInterval(function () {
 
       let colors = [];
 
-      for (let i = 0; i < 5; i++) {
-        if (guess.charAt(i) === answer.charAt(i)) {
-          colors.push("#9DCD8C");
-        } else if (answer.includes(guess.charAt(i))) {
-          colors.push("#FEE4A7");
-        } else {
-          colors.push("#FED2BF");
+      if (dark) {
+        for (let i = 0; i < 5; i++) {
+          if (guess.charAt(i) === answer.charAt(i)) {
+            colors.push("rgb(157, 205, 140, 0.5)");
+          } else if (answer.includes(guess.charAt(i))) {
+            colors.push("rgb(254, 228, 167, 0.5");
+          } else {
+            colors.push("rgb(254, 210, 191, 0.5)");
+          }
+        }
+      } else {
+        for (let i = 0; i < 5; i++) {
+          if (guess.charAt(i) === answer.charAt(i)) {
+            colors.push("#9DCD8C");
+          } else if (answer.includes(guess.charAt(i))) {
+            colors.push("#FEE4A7");
+          } else {
+            colors.push("#FED2BF");
+          }
         }
       }
+
 
       setGuesses([
         ...guesses,
@@ -78,7 +93,7 @@ setInterval(function () {
 
 
   return (
-    <div className="App">
+    <div className={`App ${dark}`}>
       {openModal == 'result' ?
       <ResultModal win={win} answer={answer} setOpenModal={setOpenModal} result={result} />
       : openModal == 'explanation' ?
@@ -90,7 +105,13 @@ setInterval(function () {
       <div className="top-bar">
         <img alt="question mark" className="question-mark" onClick={e => setOpenModal('explanation')} src={questionmark} />
         <h1>Namedle</h1>
-        <img alt="moon" className="moon" src={moon} />
+        {dark ?
+        <img alt="sun" className="moon" src={sun} onClick={e => setDark()} />
+        :
+<img alt="moon" className="moon" src={moon} onClick={e => setDark("dark")} />
+      }
+        
+        
         </div>
         
       <div className="container">

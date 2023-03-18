@@ -10,6 +10,15 @@ p {
     cursor: default;
 }
 
+.dark {
+    background-color: #424242;
+}
+
+.dark .top-bar, .dark .bottom-bar, .dark button, .dark input, .dark .character {
+    background-color: #323131;
+    color: #fff;
+}
+
 .top-bar, .bottom-bar {
     width: 100%;
     height: 60px;
@@ -122,6 +131,7 @@ box-sizing: border-box;
 .cross {
     margin-right: 0;
     font-size: 2rem;
+    line-height: 3rem;
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
