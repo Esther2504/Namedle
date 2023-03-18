@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import words from "./words.json"
-import names from "./names.json"
+import names from "./names2.json"
 import questionmark from "./questionmark.svg"
 import moon from "./moon.svg"
 import ResultModal from "./ResultModal";
@@ -88,9 +88,9 @@ setInterval(function () {
     }
       
       <div className="top-bar">
-        <img onClick={e => setOpenModal('explanation')} src={questionmark} />
+        <img alt="question mark" className="question-mark" onClick={e => setOpenModal('explanation')} src={questionmark} />
         <h1>Namedle</h1>
-        <img className="moon" src={moon} />
+        <img alt="moon" className="moon" src={moon} />
         </div>
         
       <div className="container">

@@ -7,7 +7,7 @@ export default function ResultModal({ answer, win, setOpenModal }) {
         <p className="cross" onClick={(e) => setOpenModal(false)}>X</p>
         <div className="content">
           <div>
-        {win == "won" ? (
+        {win === "won" ? (
           <p>Congratulations, the answer was</p>
         ) : (
           <p>The answer was</p>

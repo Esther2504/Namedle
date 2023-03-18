@@ -11,11 +11,11 @@ export default function ExplantionModal({setOpenModal}) {
       <div className="content">
         <h1>Explanation</h1>
         <p>Inspired by the famous game Wordle, you have 6 attempts to guess the name.</p>
-        <img src={red}></img>
+        <img alt="example with only red characters" src={red}></img>
         <p>None of the characters are in the name</p>
-        <img src={yellow}></img>
+        <img alt="example with a yellow character" src={yellow}></img>
         <p>The yellow character is in the name, but not in the right position</p>
-        <img src={green}></img>
+        <img alt="example with a green character" src={green}></img>
         <p>The green character is in the right position</p>
         </div>
     </div>
