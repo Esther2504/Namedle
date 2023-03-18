@@ -1,7 +1,7 @@
 import React from 'react'
-import green from './example_green.PNG'
-import yellow from './example_yellow.PNG'
-import red from './example_red.PNG'
+import green from './example_green.png'
+import yellow from './example_yellow.png'
+import red from './example_red.png'
 
 export default function ExplantionModal({setOpenModal}) {
   return (
