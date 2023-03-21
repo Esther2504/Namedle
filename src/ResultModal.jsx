@@ -40,10 +40,9 @@ export default function ResultModal({
             {win === "won" ? (
               <>
                 <p>Congratulations, you got the answer in {guesses} guess(es)</p>
-                {/* <p>The answer was:</p> */}
               </>
             ) : (
-              <p>The answer was</p>
+              <p style={{fontSize:"1.7rem"}}>The answer was</p>
             )}
             <p className="answer">{answer}</p>
           </div>
