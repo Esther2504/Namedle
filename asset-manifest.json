@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/namedle/static/css/main.59c86b45.css",
+    "main.js": "/namedle/static/js/main.bcb05aa5.js",
+    "static/media/moon.svg": "/namedle/static/media/moon.11f468de7f08ed5099bd6162288e7798.svg",
+    "static/media/sun.svg": "/namedle/static/media/sun.afa15a452622789933ff0d4abc634a2b.svg",
+    "static/media/questionmark.svg": "/namedle/static/media/questionmark.c732ac20fe4f65e17b4742d0e5394fb9.svg",
+    "index.html": "/namedle/index.html",
+    "main.59c86b45.css.map": "/namedle/static/css/main.59c86b45.css.map",
+    "main.bcb05aa5.js.map": "/namedle/static/js/main.bcb05aa5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59c86b45.css",
+    "static/js/main.bcb05aa5.js"
+  ]
+}
