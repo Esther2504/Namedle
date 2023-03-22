@@ -19,8 +19,6 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
   const [dark, setDark] = useState();
 
-  console.log(answer);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
