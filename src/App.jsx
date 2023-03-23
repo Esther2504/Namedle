@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import words from "./words.json";
 import names from "./names.json";
@@ -19,11 +19,20 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
   const [dark, setDark] = useState();
 
+
+
+useEffect(() => {
+  if (openModal == 'result' || openModal == 'explanation') {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = 'auto'
+  }
+});
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (guessesLeft > 0) {
-      console.log(Array.from(guess));
       setGuess(Array.from(guess.toLowerCase));
 
       let colors = [];
@@ -87,7 +96,7 @@ function App() {
   let result = localStorage.getItem("result");
 
   return (
-    <div className={`App ${dark}`}>
+    <div className={`App ${dark} ${openModal}`}>
       {openModal == "result" ? (
         <ResultModal
           win={win}
