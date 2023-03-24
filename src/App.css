@@ -1,152 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 p {
-    cursor: default;
+  cursor: default;
 }
 
 .dark {
-    background-color: #424242;
+  background-color: #424242;
 }
 
-.dark .top-bar, .dark .bottom-bar, .dark button, .dark input, .dark .character, .dark .result-container {
-    background-color: #323131;
-    color: #fff;
+.dark .top-bar,
+.dark .bottom-bar,
+.dark button,
+.dark input,
+.dark .character,
+.dark .result-container {
+  background-color: #323131;
+  color: #fff;
 }
 
-.top-bar, .bottom-bar {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    background-color: #BADEEE;
-    font-family: "Pacifico", cursive;
-    color: white;
-    text-align: center;
-    font-size: 1rem;
-    align-items: center;
-    justify-content: space-between;
+.top-bar,
+.bottom-bar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  background-color: #badeee;
+  font-family: "Pacifico", cursive;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 img {
-    width: 60px;
+  width: 60px;
 }
 
 .question-mark {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .moon {
-    width: 40px;
-    margin: 5px;
-    cursor: pointer;
+  width: 40px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .guess {
-display: flex;
-font-size: 3rem;
-text-align: center;
-text-transform: capitalize;
+  display: flex;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .character {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgb(0, 0, 0);
-    margin: 3px;
-    border-radius: 10px;
-
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgb(0, 0, 0);
+  margin: 3px;
+  border-radius: 10px;
 }
 
 .container {
-    margin: 50px auto;
-    width: 300px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  margin: 50px auto;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 form {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 button {
-     background-color: #BADEEE;   
-     color: white;
-     border: none;
-     height: 40px;
-     font-size: 1rem;
-     font-weight: 600;
-     border-radius: 10px;
-     cursor: pointer;
+  background-color: #badeee;
+  color: white;
+  border: none;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 input {
-    height: 30px;
-    border-radius: 10px;
+  height: 30px;
+  border-radius: 10px;
 }
 
 .wrapper {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(0, 0, 0, 0.5);
-    z-index: 5;
-    position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 5;
+  position: fixed;
 }
 
 .result-container {
-    background-color: white;
-    width: 380px;
-    height: 500px;
-    z-index: 8;
-    text-align: center;
-    margin: 100px auto;
-    border-radius: 10px;
-padding: 0 20px;
-box-sizing: border-box;
+  background-color: white;
+  width: 380px;
+  height: 500px;
+  z-index: 8;
+  text-align: center;
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
 }
 
 .answer {
-    text-transform: uppercase;
-    font-size: 4rem;
-    margin-top: 0;
+  text-transform: uppercase;
+  font-size: 4rem;
+  margin-top: 0;
 }
 
 .cross {
-    margin-right: 0;
-    font-size: 2rem;
-    line-height: 3rem;
-    display: flex;
-    justify-content: flex-end;
-    cursor: pointer;
+  margin-right: 0;
+  font-size: 2rem;
+  line-height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
 }
 
 .new-game {
-    width: 230px;
-    height: 60px;
-    font-size: 1.5rem;
+  width: 230px;
+  height: 60px;
+  font-size: 1.5rem;
 }
 
 .content img {
-    width: 250px;
-}
-
-.explanation body {
-    overflow-y: hidden;
+  width: 250px;
 }

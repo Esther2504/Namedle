@@ -19,16 +19,6 @@ function App() {
   const [openModal, setOpenModal] = useState(false);
   const [dark, setDark] = useState();
 
-
-
-useEffect(() => {
-  if (openModal == 'result' || openModal == 'explanation') {
-    document.body.style.overflow = 'hidden'
-  } else {
-    document.body.style.overflow = 'auto'
-  }
-});
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
