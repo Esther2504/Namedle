@@ -27,27 +27,17 @@ function App() {
 
       let colors = [];
 
-      if (dark) {
+       
         for (let i = 0; i < 5; i++) {
           if (guess.charAt(i) === answer.charAt(i)) {
-            colors.push("rgb(157, 205, 140, 0.5)");
+            colors.push("#0c917d");
           } else if (answer.includes(guess.charAt(i))) {
-            colors.push("rgb(254, 228, 167, 0.5");
+            colors.push("#e6cd17");
           } else {
-            colors.push("rgb(254, 210, 191, 0.5)");
+            colors.push("#e70202");
           }
         }
-      } else {
-        for (let i = 0; i < 5; i++) {
-          if (guess.charAt(i) === answer.charAt(i)) {
-            colors.push("#9DCD8C");
-          } else if (answer.includes(guess.charAt(i))) {
-            colors.push("#FEE4A7");
-          } else {
-            colors.push("#FED2BF");
-          }
-        }
-      }
+      
 
       setGuesses([
         ...guesses,
