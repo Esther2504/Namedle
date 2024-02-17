@@ -38,7 +38,6 @@ function App() {
           }
         }
       
-
       setGuesses([
         ...guesses,
         {
@@ -54,11 +53,7 @@ function App() {
         setOpenModal("result");
         localStorage.setItem("result", "won");
       }
-
-      document.body.addEventListener("click", function () {
-        setOpenModal(false);
-      });
-
+      
       setGuess();
 
       setguessesLeft(guessesLeft - 1);
