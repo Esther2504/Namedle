@@ -1,7 +1,7 @@
 import React from 'react'
-import green from './example_green.PNG'
-import yellow from './example_yellow.PNG'
-import red from './example_red.PNG'
+import green from './examplegreen.PNG'
+import yellow from './exampleyellow.PNG'
+import red from './examplered.PNG'
 
 export default function ExplantionModal({setOpenModal}) {
   return (
@@ -10,7 +10,7 @@ export default function ExplantionModal({setOpenModal}) {
       <p className="cross" onClick={(e) => setOpenModal(false)}>X</p>
       <div className="content">
         <h1>Explanation</h1>
-        <p>Inspired by the famous game Wordle, you have 6 attempts to guess the name.</p>
+        <p>Inspired by the game Wordle, you have 6 attempts to guess the name.</p>
         <img alt="example with only red characters" src={red}></img>
         <p>None of the characters are in the name</p>
         <img alt="example with a yellow character" src={yellow}></img>
